@@ -46,7 +46,12 @@ jobs:
       run: tree .
       
     - name: loking for jar
-      run: find . -name *MICROCRAFT*.jar
+      run: find . -name *Microcraft*.jar
+    
+    - uses: actions/upload-artifact@v4
+      with:
+        name: Microcraft.jar
+        path: out/artifacts/Microcraft_jar/Microcraft.jar
         
     - name: Download a Build Artifact
       uses: actions/download-artifact@v5.0.0
@@ -54,4 +59,3 @@ jobs:
         # Name of the artifact to download. If unspecified, all artifacts for the run are downloaded.
         name: Microcraft.jar
         path: out/artifacts/Microcraft_jar/Microcraft.jar
-          
